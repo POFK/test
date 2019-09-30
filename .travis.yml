@@ -10,7 +10,7 @@ matrix:
   include:
 #   - python: 3.4
 #     env: DISTRIB="ubuntu" TOX_PYTHON_VERSION="py34" COVERAGE="true"
-    - env: DISTRIB="conda" PYTHON_VERSION="3.6" COVERAGE="false"
+    - env: DISTRIB="conda" PYTHON_VERSION="3.6" COVERAGE="true"
 install:
   - source tests/travis_install.sh
   - pip install -r requirements.txt

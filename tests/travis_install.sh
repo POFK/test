@@ -27,9 +27,12 @@ if [[ "$DISTRIB" == "conda" ]]; then
         # itself
         wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
             -O miniconda.sh
+        echo "step 1!"
         chmod +x miniconda.sh && ./miniconda.sh -b -p $HOME/miniconda
+        echo "step 2!"
     fi
     export PATH=$HOME/miniconda/bin:$PATH
+    echo "step 3!"
     # Make sure to use the most updated version
     conda update --yes conda
 
@@ -37,7 +40,8 @@ if [[ "$DISTRIB" == "conda" ]]; then
     # provided versions
     # (prefer local venv, since the miniconda folder is cached)
     conda create -p ./.venv --yes python=${PYTHON_VERSION} pip
-    source activate ./.venv
+    conda activate ./.venv
+    echo "4!"
 fi
 
 if [[ "$COVERAGE" == "true" ]]; then
@@ -49,7 +53,7 @@ travis-cleanup() {
     printf "Cleaning up environments ... "  # printf avoids new lines
     if [[ "$DISTRIB" == "conda" ]]; then
         # Force the env to be recreated next time, for build consistency
-        source deactivate
+        conda deactivate
         conda remove -p ./.venv --all --yes
         rm -rf ./.venv
     fi
