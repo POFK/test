@@ -9,7 +9,6 @@
 # THIS SCRIPT IS SUPPOSED TO BE AN EXAMPLE. MODIFY IT ACCORDING TO YOUR NEEDS!
 
 set -e
-echo "step 0!"
 
 if [[ "$DISTRIB" == "conda" ]]; then
     # Deactivate the travis-provided virtual environment and setup a
@@ -28,12 +27,10 @@ if [[ "$DISTRIB" == "conda" ]]; then
         # itself
         wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
             -O miniconda.sh
-        echo "step 1!"
         chmod +x miniconda.sh && ./miniconda.sh -b -p $HOME/miniconda
-        echo "step 2!"
+        conda init
     fi
     export PATH=$HOME/miniconda/bin:$PATH
-    echo "step 3!"
     # Make sure to use the most updated version
     conda update --yes conda
 
