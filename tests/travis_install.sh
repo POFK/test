@@ -9,6 +9,7 @@
 # THIS SCRIPT IS SUPPOSED TO BE AN EXAMPLE. MODIFY IT ACCORDING TO YOUR NEEDS!
 
 set -e
+echo "step 0!"
 
 if [[ "$DISTRIB" == "conda" ]]; then
     # Deactivate the travis-provided virtual environment and setup a
@@ -39,8 +40,8 @@ if [[ "$DISTRIB" == "conda" ]]; then
     # Configure the conda environment and put it in the path using the
     # provided versions
     # (prefer local venv, since the miniconda folder is cached)
-    conda create -p ./.venv --yes python=${PYTHON_VERSION} pip
-    conda activate ./.venv
+    conda create -n test --yes python=${PYTHON_VERSION} pip
+    conda activate test
     echo "4!"
 fi
 
@@ -54,8 +55,7 @@ travis-cleanup() {
     if [[ "$DISTRIB" == "conda" ]]; then
         # Force the env to be recreated next time, for build consistency
         conda deactivate
-        conda remove -p ./.venv --all --yes
-        rm -rf ./.venv
+        conda remove -n test --all --yes
     fi
     echo "DONE"
 }
