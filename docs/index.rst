@@ -1,8 +1,8 @@
-================
-py_repo_template
-================
+====
+test
+====
 
-This is the documentation of **py_repo_template**.
+This is the documentation of **test**.
 
 .. note::
 

@@ -83,7 +83,7 @@ def setup(app):
         'enable_inline_math': True
     }, True)
     app.add_transform(AutoStructify)
-    
+
 # Additional parsers besides rst
 source_parsers = {
    '.md': 'recommonmark.parser.CommonMarkParser',
@@ -99,7 +99,7 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = u'py_repo_template'
+project = u'test'
 copyright = u'2019, POFK'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -253,7 +253,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'user_guide.tex', u'py_repo_template Documentation',
+  ('index', 'user_guide.tex', u'test Documentation',
    u'POFK', 'manual'),
 ]
 

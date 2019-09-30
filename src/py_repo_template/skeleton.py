@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 This is a skeleton file that can serve as a starting point for a Python
@@ -55,29 +54,29 @@ def parse_args(args):
       :obj:`argparse.Namespace`: command line parameters namespace
     """
     parser = argparse.ArgumentParser(
-        description="Just a Fibonnaci demonstration")
+        description="Just a Fibonacci demonstration")
     parser.add_argument(
-        '--version',
-        action='version',
-        version='py_repo_template {ver}'.format(ver=__version__))
+        "--version",
+        action="version",
+        version="test {ver}".format(ver=__version__))
     parser.add_argument(
         dest="n",
         help="n-th Fibonacci number",
         type=int,
         metavar="INT")
     parser.add_argument(
-        '-v',
-        '--verbose',
+        "-v",
+        "--verbose",
         dest="loglevel",
         help="set loglevel to INFO",
-        action='store_const',
+        action="store_const",
         const=logging.INFO)
     parser.add_argument(
-        '-vv',
-        '--very-verbose',
+        "-vv",
+        "--very-verbose",
         dest="loglevel",
         help="set loglevel to DEBUG",
-        action='store_const',
+        action="store_const",
         const=logging.DEBUG)
     return parser.parse_args(args)
 

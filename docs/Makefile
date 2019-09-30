@@ -5,10 +5,10 @@
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
-BUILDDIR      = _build
+BUILDDIR      = ../build/sphinx/
 AUTODOCDIR    = api
 AUTODOCBUILD  = sphinx-apidoc
-PROJECT       = py_repo_template
+PROJECT       = test
 MODULEDIR     = ../src/py_repo_template
 
 # User-friendly check for sphinx-build
